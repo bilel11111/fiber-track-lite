@@ -14,7 +14,80 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      material_usages: {
+        Row: {
+          bpi_id: string | null
+          id: string
+          material_id: string
+          note: string | null
+          quantity: number
+          scanned_at: string
+          user_id: string
+        }
+        Insert: {
+          bpi_id?: string | null
+          id?: string
+          material_id: string
+          note?: string | null
+          quantity: number
+          scanned_at?: string
+          user_id: string
+        }
+        Update: {
+          bpi_id?: string | null
+          id?: string
+          material_id?: string
+          note?: string | null
+          quantity?: number
+          scanned_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "material_usages_material_id_fkey"
+            columns: ["material_id"]
+            isOneToOne: false
+            referencedRelation: "materials"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      materials: {
+        Row: {
+          category: string
+          code: string
+          created_at: string
+          id: string
+          min_stock: number
+          name: string
+          stock_qty: number
+          unit: string
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          code: string
+          created_at?: string
+          id?: string
+          min_stock?: number
+          name: string
+          stock_qty?: number
+          unit?: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          code?: string
+          created_at?: string
+          id?: string
+          min_stock?: number
+          name?: string
+          stock_qty?: number
+          unit?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
