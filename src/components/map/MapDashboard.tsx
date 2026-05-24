@@ -3,7 +3,8 @@ import { MapContainer, TileLayer, Marker, Popup, Polyline, CircleMarker, useMap 
 import MarkerClusterGroup from "react-leaflet-cluster";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import "react-leaflet-cluster/styles";
+import "leaflet.markercluster/dist/MarkerCluster.css";
+import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 import { getDistance } from "geolib";
 import {
   technicians as initialTechs,
@@ -231,7 +232,7 @@ export function MapDashboard() {
         zoom={14}
         className="h-full w-full"
         zoomControl={false}
-        eventHandlers={{} as never}
+        
       >
         <ClickCatcher onClick={(latlng) => setTicketPoint(latlng)} />
         <Recenter center={recenterTarget} />
