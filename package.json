@@ -1,5 +1,5 @@
 {
-  "name": "tanstack_start_ts",
+  "name": "fiber-track-lite",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -91,5 +91,6 @@
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
     "vite": "^7.3.1"
-  }
+  },
+  "description": "Authenticated fiber-network operations dashboard with maps and materials tracking."
 }
